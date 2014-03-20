@@ -1,0 +1,19 @@
+<h1>利用者一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th>部署</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.department %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
