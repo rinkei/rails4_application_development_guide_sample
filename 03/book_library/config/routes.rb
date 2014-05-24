@@ -1,6 +1,6 @@
 BookLibrary::Application.routes.draw do
   resources :books
-  resources :users, only: %w(index new create)
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
