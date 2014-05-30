@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320061906) do
+ActiveRecord::Schema.define(version: 20140530044303) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20140320061906) do
     t.string   "department"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "age"
+    t.integer  "last_score"
+    t.float    "average"
+    t.string   "zip_code"
+    t.string   "tel"
+    t.string   "contact_type", default: "phone"
+    t.string   "email"
   end
 
 end
