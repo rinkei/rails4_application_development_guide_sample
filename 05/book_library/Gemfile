@@ -43,3 +43,21 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development, :test do
+  # Use RSpec for unit test
+  gem 'rspec-rails', '~> 3.0.0.beta'
+
+  # Use pry for debug
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'tapp'
+  gem 'awesome_print'
+
+  # Hide assets' log
+  gem 'quiet_assets'
+end
