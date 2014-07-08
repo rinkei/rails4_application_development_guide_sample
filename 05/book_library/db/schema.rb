@@ -11,12 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140530044303) do
+ActiveRecord::Schema.define(version: 20140621141347) do
 
   create_table "books", force: true do |t|
     t.string   "title"
     t.string   "author"
     t.text     "outline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "holder_id"
+  end
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "taggings", ["book_id"], name: "index_taggings_on_book_id"
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140530044303) do
     t.string   "tel"
     t.string   "contact_type", default: "phone"
     t.string   "email"
+    t.integer  "books_size"
   end
 
 end
