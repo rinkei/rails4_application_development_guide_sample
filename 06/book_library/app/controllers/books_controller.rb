@@ -1,10 +1,12 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action LoggerFilter
 
   # GET /books
   # GET /books.json
   def index
     @books = Book.all
+    flash[:notice] = "現在時刻：#{Time.now}"
   end
 
   # GET /books/1

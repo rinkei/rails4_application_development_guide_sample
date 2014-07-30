@@ -9,10 +9,10 @@ class Book < ActiveRecord::Base
   #after_create BooksSizeIncrement.new
   #after_create :book_size_increment
   #after_create "self.user.increment!(:books_size)"
-  after_create do |record|
-    puts 'block'
-    record.user.increment!(:books_size)
-  end
+  #after_create do |record|
+  #  puts 'block'
+  #  record.user.increment!(:books_size)
+  #end
 
   private
   def book_size_increment

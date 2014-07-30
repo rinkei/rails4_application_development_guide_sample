@@ -4,6 +4,12 @@
   <%= flash[:notice] %>
 </div>
 
+<%= form_for @book, url: admin_path, method: 'post' do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :author %>
+  <%= f.submit %>
+<% end %>
+
 <table>
   <thead>
     <tr>
