@@ -3,19 +3,19 @@ class LoggerFilter
   #  puts "@@@ before!"
   #end
 
-  def self.after(controller)
-    puts "@@@ after!"
-  end
+  #def self.after(controller)
+  #  puts "@@@ after!"
+  #end
 
   #def self.filter(contrller)
   #  puts "@@@ filter before!"
   #  yield
   #  puts "@@@ filter after!"
-  end
+  #end
 
   def self.around(controller)
     puts "@@@ around before!"
-  #  yield
-  #  puts "@@@ around after!"
+    yield
+    puts "@@@ around after!"
   end
 end

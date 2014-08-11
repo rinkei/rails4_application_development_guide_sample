@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  before_action LoggerFilter
+  around_action LoggerFilter
 
   # GET /books
   # GET /books.json
