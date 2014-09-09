@@ -61,3 +61,5 @@ group :development, :test do
   # Hide assets' log
   gem 'quiet_assets'
 end
+
+gem 'slim-rails'
