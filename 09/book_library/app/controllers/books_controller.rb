@@ -5,7 +5,13 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @query = Query.new(params[:query])
+    if @query.valid?
+      @books = Book.where("title like :keyword OR author like :keyword", keyword: @query.keyword)
+    else
+      @books = Book.all
+    end
+
     flash[:notice] = "現在時刻：#{Time.now}"
   end
 
