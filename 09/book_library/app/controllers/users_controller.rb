@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      AuthenticationMailer.complete_registration(@user).deliver
       redirect_to users_url
     else
       render 'new'
@@ -44,6 +45,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :department)
+    params.require(:user).permit(:name, :department, :email)
   end
 end

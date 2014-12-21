@@ -1,7 +1,7 @@
 BookLibrary::Application.routes.draw do
   root 'books#index'
   resources :books
-  resources :users, except: %i(w create edit update destroy) do
+  resources :users do
     get  'booking', on: :collection
     post 'message', on: :member
     resources :books, only: %i(index)
