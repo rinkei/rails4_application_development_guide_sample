@@ -1,0 +1,33 @@
+ja:
+  hello: "Hello world"
+  greeting:
+    morning: "おはようございます。"
+    daytime: "こんにちは。"
+    evening: "こんばんは"
+
+  activerecord:
+    models:
+      book: 書籍
+      user: ユーザー
+
+    attributes:
+      book:
+        title: タイトル
+
+  books:
+    index:
+      title: 書籍一覧
+    show:
+      title: 書籍情報%{title}
+
+  genres:
+    -
+    - Ruby/Rails
+    - Design
+    - Server
+
+  genres:
+    ruby_rails: Ruby/Rails
+    design: デザイン
+    server: サーバー
+
