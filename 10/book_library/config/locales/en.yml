@@ -21,3 +21,7 @@
 
 en:
   hello: "Hello world"
+  greeting:
+    morning: "Good morning."
+    daytime: "Hello."
+    evening: "Good evening."
