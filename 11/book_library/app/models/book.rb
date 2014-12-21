@@ -4,6 +4,14 @@ class Book < ActiveRecord::Base
   has_many :taggings, foreign_key: 'tag_id'
   has_many :tags, through: :taggings
 
+  scope :search, ->(query=nil) {
+    if query && query.valid?
+      where("title like :keyword OR author like :keyword", keyword: query.keyword)
+    else
+      all
+    end
+  }
+
   scope :tagged_tag1, -> { joins(:tags).where('tags.name = ?', 'tag1') }
 
   #after_create BooksSizeIncrement.new

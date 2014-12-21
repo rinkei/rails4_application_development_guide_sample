@@ -1,19 +1,17 @@
 BookLibrary::Application.routes.draw do
+  # ユーザサイド
   root 'books#index'
-  resources :books
+  resources :books, only: %w(index show)
   resources :users do
     get  'booking', on: :collection
     post 'message', on: :member
-    resources :books, only: %i(index)
   end
 
+  # 管理者サイド
   namespace :admin do
-    resources :books, only: %i(index)
+    root 'admin/books#index'
+    resources :books
   end
-
-  get  'admin' => 'admin/books#index'
-  get  'admin/:id' => 'admin/books#show'
-  post 'admin' => 'admin/books#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

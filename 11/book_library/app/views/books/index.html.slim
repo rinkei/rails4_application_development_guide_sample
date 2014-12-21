@@ -1,9 +1,5 @@
 h1 = t('.title')
 
-#flash
-  = flash[:notice]
-
-- @query = Query.new
 = form_for @query, url: books_path, method: :get do |f|
   = f.text_field :keyword
   = f.submit '検索'
@@ -15,8 +11,6 @@ table
       th Author
       th Outline
       th
-      th
-      th
 
   tbody
     - @books.each do |book|
@@ -25,9 +19,3 @@ table
         td = book.author
         td = book.outline
         td = link_to 'Show', book
-        td = link_to 'Edit', edit_book_path(book)
-        td = link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
-
-br
-
-= link_to 'New Book', new_book_path
