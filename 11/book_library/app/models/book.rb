@@ -13,18 +13,4 @@ class Book < ActiveRecord::Base
   }
 
   scope :tagged_tag1, -> { joins(:tags).where('tags.name = ?', 'tag1') }
-
-  #after_create BooksSizeIncrement.new
-  #after_create :book_size_increment
-  #after_create "self.user.increment!(:books_size)"
-  #after_create do |record|
-  #  puts 'block'
-  #  record.user.increment!(:books_size)
-  #end
-
-  private
-  def book_size_increment
-    puts 'symbol'
-    self.user.increment!(:books_size)
-  end
 end

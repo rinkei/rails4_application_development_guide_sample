@@ -1,0 +1,9 @@
+h2 = book.title
+.author  = book.author
+.outline = book.outline
+.links
+  = link_to 'Show', admin_book_path(book)
+  '|
+  = link_to 'Edit', edit_admin_book_path(book)
+  '|
+  = link_to 'Destroy', admin_book_path(book), method: :delete, data: { confirm: 'Are you sure?' }

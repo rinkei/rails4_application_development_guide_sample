@@ -9,7 +9,7 @@ BookLibrary::Application.routes.draw do
 
   # 管理者サイド
   namespace :admin do
-    root 'admin/books#index'
+    root 'books#index'
     resources :books
   end
 

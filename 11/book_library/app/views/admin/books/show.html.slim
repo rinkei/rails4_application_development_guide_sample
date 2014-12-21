@@ -1,0 +1,15 @@
+h1 = t('.title', title: @book.title)
+
+p
+  strong Title:
+  = @book.title
+
+p
+  strong Author:
+  = @book.author
+
+p
+  strong Outline:
+  = conv_break @book.outline
+
+= link_to 'Back', admin_books_path

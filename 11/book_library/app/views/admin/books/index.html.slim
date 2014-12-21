@@ -1,0 +1,10 @@
+h1 Listing books
+
+/- @books.each do |book|
+  = render book
+
+= render partial: 'book', collection: @books
+
+br
+
+= link_to 'New Book', new_admin_book_path
